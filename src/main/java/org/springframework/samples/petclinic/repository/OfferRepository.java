@@ -3,17 +3,13 @@ package org.springframework.samples.petclinic.repository;
 import java.util.Collection;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.samples.petclinic.model.Offer;
+import org.springframework.stereotype.Repository;
 
-public interface OfferRepository {
-	
-	Collection<Offer> findAll() throws DataAccessException;
+@Repository
+public interface OfferRepository extends JpaRepository<Offer, Integer>{
 	
 	Collection<Offer> findAllByValid() throws DataAccessException;
 	
-	void save(Offer offer) throws DataAccessException;
-
-	void delete(Offer offer) throws DataAccessException;
-
-	Offer findById(int id) throws DataAccessException;
 }

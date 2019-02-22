@@ -14,7 +14,7 @@ public class OfferService {
 	private OfferRepository offerRepo;
 	
 	public Offer findOfferById(int id) {
-		return offerRepo.findById(id);
+		return offerRepo.findOne(id);
 	}
 
 	public Collection<Offer> findAllOffers() {
@@ -47,7 +47,7 @@ public class OfferService {
 	}
 	
 	public Offer deleteOffer(int id) {
-		Offer offer = offerRepo.findById(id);
+		Offer offer = offerRepo.findOne(id);
 		if (offer != null) {
 			offerRepo.delete(offer);
 		}
