@@ -44,8 +44,11 @@ public class OfferService {
 		}
 	}
 	
-	public void deleteOffer(int id) {
+	public Offer deleteOffer(int id) {
 		Offer offer = offerRepo.findById(id);
-		offerRepo.delete(offer);
+		if (offer != null) {
+			offerRepo.delete(offer);
+		}
+		return offer;
 	}
 }
