@@ -35,9 +35,12 @@ public class OfferService {
 		offerRepo.save(offer);
 	}
 	
-	public void updateOffer(Offer offer, int id) {
+	public Offer updateOffer(Offer offer, int id) {
 		if (offer.getId() == id) {
 			offerRepo.save(offer);
+			return offer;
+		} else {
+			return null;
 		}
 	}
 	
