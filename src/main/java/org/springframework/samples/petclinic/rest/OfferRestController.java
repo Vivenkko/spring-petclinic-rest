@@ -93,7 +93,7 @@ public class OfferRestController {
 			if(offerService.updateOffer(offer, offerId) == null) {
 				return new ResponseEntity<Offer>(headers, HttpStatus.BAD_REQUEST);
 			} else {
-				return new ResponseEntity<Offer>(headers, HttpStatus.OK);
+				return new ResponseEntity<Offer>(offer, headers, HttpStatus.OK);
 			}
 		}		
 	}
