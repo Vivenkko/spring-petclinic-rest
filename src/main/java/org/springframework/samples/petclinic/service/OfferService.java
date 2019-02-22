@@ -1,11 +1,12 @@
 package org.springframework.samples.petclinic.service;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.samples.petclinic.repository.OfferRepository;
 import org.springframework.samples.petclinic.model.Offer;
+import org.springframework.samples.petclinic.repository.OfferRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 public class OfferService {
@@ -22,7 +23,8 @@ public class OfferService {
 	}
 	
 	public Collection<Offer> findAllOffersByValid() {
-		Collection<Offer> offers = offerRepo.findAllByValid();
+		//Collection<Offer> offers = offerRepo.findByValid(true);
+		Collection<Offer> offers = offerRepo.findByExpirationAfter(new Date());
 		for (Offer offer : offers) {
 			// Comprueba a nivel de fecha que de verdad la oferta es válida
 			// y lo setea si es necesario
