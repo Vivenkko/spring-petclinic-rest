@@ -57,3 +57,12 @@ INSERT INTO users(username,password,enabled) VALUES ('admin','admin', true);
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_OWNER_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_VET_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_ADMIN');
+
+INSERT INTO offers VALUES (1, 'Water can', '600ml', 5, '2018-01-01', false);
+INSERT INTO offers VALUES (2, 'Dental cleaning', 'Only for mammals', 10, '2019-02-23', true);
+INSERT INTO offers VALUES (3, 'Collar', 'Choose between 3 colours', 25, '2019-01-09', false);
+INSERT INTO offers VALUES (4, 'Claws trimming ', 'Only for cats', 50, '2020-01-01', true);
+INSERT INTO offers VALUES (5, 'Dog food', '10kg', 15, '2020-01-01', true);
+INSERT INTO offers VALUES (6, 'Bird cage', '3 cubic meters', 75, '2020-01-01', true);
+INSERT INTO offers VALUES (7, 'Vaccination', 'Against rage', 3, '2019-02-15', false);
+

@@ -32,11 +32,13 @@ public class OfferService {
 	}
 	
 	public void addOffer(Offer offer) {
+		offer.setValidation();
 		offerRepo.save(offer);
 	}
 	
 	public Offer updateOffer(Offer offer, int id) {
 		if (offer.getId() == id) {
+			offer.setValidation();
 			offerRepo.save(offer);
 			return offer;
 		} else {

@@ -15,40 +15,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "offers")
-public class Offer {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "offer_id")
-    private int id;
+public class Offer extends BaseEntity {
 
-    @Column(name = "title")
     private String title;
-
-    @Column(name = "description")
     private String description;
-
-    @Column(name = "discount_percentage")
     private double discount;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy/MM/dd")
-    @Column(name = "expiration_date")
     private Date expiration;
     
-    @Column(name = "valid_offer")
     private boolean valid;
-
-	public int getId() {
-		return id;
-	}
-
-	/* 
-	 * Mejor no incluir
-	 * 
-	 * public void setId(int id) {
-		this.id = id;
-	}*/
 
 	public String getTitle() {
 		return title;
@@ -103,5 +80,11 @@ public class Offer {
 			this.setValid(false);
 		}
     }
+
+	@Override
+	public String toString() {
+		return "Offer [title=" + title + ", description=" + description + ", discount=" + discount + ", expiration="
+				+ expiration + ", valid=" + valid + "]";
+	}
     
 }
