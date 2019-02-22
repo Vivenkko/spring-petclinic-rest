@@ -4,9 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,14 +14,21 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "offers")
 public class Offer extends BaseEntity {
 
+	@Column(name = "title")
     private String title;
+	
+	@Column(name = "description")
     private String description;
+	
+	@Column(name = "discount")
     private double discount;
 
     @Temporal(TemporalType.DATE)
+    @Column(name = "expiration")
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date expiration;
     
+    @Column(name = "valid")
     private boolean valid;
 
 	public String getTitle() {
